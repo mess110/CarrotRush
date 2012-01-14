@@ -1,4 +1,4 @@
-package com.mess110.whackeverything;
+package com.mess110.carrotrush;
 
 import android.graphics.Canvas;
 import android.util.Log;

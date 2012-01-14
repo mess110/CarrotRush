@@ -1,4 +1,4 @@
-package com.mess110.whackeverything.model;
+package com.mess110.carrotrush.model;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
