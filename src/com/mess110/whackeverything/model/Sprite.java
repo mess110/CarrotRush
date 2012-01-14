@@ -1,4 +1,4 @@
-package com.mess110.whackeverything;
+package com.mess110.whackeverything.model;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
