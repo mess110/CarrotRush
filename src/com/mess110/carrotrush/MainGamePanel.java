@@ -130,20 +130,13 @@ public class MainGamePanel extends SurfaceView implements
 					handleButtonPress(correctButton, 3);
 				}
 
-				// check if in the lower part of the screen we exit
 				if (event.getY() < 64 && event.getX() > getWidth() - 64) {
 					finish();
-				} else {
-					Log.d(TAG,
-							"Coords: x=" + event.getX() + ",y=" + event.getY());
 				}
 			} else {
 				if (event.getY() < 64 && event.getX() > getWidth() - 64) {
 					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
 					getContext().startActivity(browserIntent);
-				} else {
-					Log.d(TAG,
-							"Coords: x=" + event.getX() + ",y=" + event.getY());
 				}
 			}
 		}
