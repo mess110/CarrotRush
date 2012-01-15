@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.net.Uri;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -25,7 +27,7 @@ public class MainGamePanel extends SurfaceView implements
 	private static final long DEFAULT_BONUS_CYCLE = 500;
 	private static final int MAX_STARS = 12;
 	private static final long CORRECT_BUTTON_POINTS = 7;
-	private static final long GAME_LENGTH = 60000;
+	private static final long GAME_LENGTH = 5000;
 	private static final long SCORE_LENGTH = 5000;
 
 	private MainThread thread;
@@ -136,7 +138,13 @@ public class MainGamePanel extends SurfaceView implements
 							"Coords: x=" + event.getX() + ",y=" + event.getY());
 				}
 			} else {
-				// finish();
+				if (event.getY() < 64 && event.getX() > getWidth() - 64) {
+					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+					getContext().startActivity(browserIntent);
+				} else {
+					Log.d(TAG,
+							"Coords: x=" + event.getX() + ",y=" + event.getY());
+				}
 			}
 		}
 		return true;
